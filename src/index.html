@@ -28,6 +28,7 @@
         position: fixed;
         top: 20px;
         right: 20px;
+        transition: all 1s;
       }
       #div1::before {
         content: "";
@@ -57,7 +58,9 @@
           width: 200px;
           height: 200px;
           left: 50%;
-          transform: translateX(-50%);
+          top: 0;
+          margin-left: -100px;
+          transition: all 1s;
         }
         #div1::after {
           width: 100px;
