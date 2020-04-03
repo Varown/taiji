@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>跳动的代码</title>
+  </head>
+  <body>
+    <style id="demo1"></style>
+    <div id="demo"></div>
+    <div id="div2">
+      <div id="div1"></div>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #demo {
+        word-break: break-all;
+      }
+      #div1 {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+      }
+      #div1::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 200px;
+        height: 200px;
+      }
+      #div1::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 200px;
+        height: 200px;
+      }
+
+      @media (max-width: 500px) {
+        #demo {
+          height: 60vh;
+          overflow: auto;
+        }
+        #div2 {
+          height: 40vh;
+        }
+        #div1 {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        #div1::after {
+          width: 100px;
+          height: 100px;
+        }
+        #div1::before {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    </style>
+
+    <script src="main.js"></script>
+  </body>
+</html>
